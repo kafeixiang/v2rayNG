@@ -85,18 +85,6 @@ class AboutActivity : BaseActivity() {
             Utils.openUri(this, AppConfig.v2rayNGUrl)
         }
 
-        binding.layoutFeedback.setOnClickListener {
-            Utils.openUri(this, AppConfig.v2rayNGIssues)
-        }
-
-        binding.layoutTgChannel.setOnClickListener {
-            Utils.openUri(this, AppConfig.TgChannelUrl)
-        }
-
-        binding.layoutPrivacyPolicy.setOnClickListener {
-            Utils.openUri(this, AppConfig.v2rayNGPrivacyPolicy)
-        }
-
         "v${BuildConfig.VERSION_NAME} (${SpeedtestUtil.getLibVersion()})".also {
             binding.tvVersion.text = it
         }
