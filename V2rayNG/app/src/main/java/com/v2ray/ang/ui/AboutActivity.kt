@@ -113,18 +113,6 @@ class AboutActivity : BaseActivity() {
                 .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
                 .show()
         }
-
-        binding.layoutTgChannel.setOnClickListener {
-            Utils.openUri(this, AppConfig.TgChannelUrl)
-        }
-
-        binding.layoutPrivacyPolicy.setOnClickListener {
-            Utils.openUri(this, AppConfig.v2rayNGPrivacyPolicy)
-        }
-
-        "v${BuildConfig.VERSION_NAME} (${SpeedtestUtil.getLibVersion()})".also {
-            binding.tvVersion.text = it
-        }
     }
 
     fun backupConfiguration(outputZipFilePos: String): Pair<Boolean, String> {

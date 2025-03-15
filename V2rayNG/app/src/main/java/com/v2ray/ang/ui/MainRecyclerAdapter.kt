@@ -182,12 +182,6 @@ class MainRecyclerAdapter(val activity: MainActivity) : RecyclerView.Adapter<Mai
             //if (activity?.defaultDPreference?.getPrefBoolean(AppConfig.PREF_INAPP_BUY_IS_PREMIUM, false)) {
             if (true) {
                 holder.itemFooterBinding.layoutEdit.visibility = View.INVISIBLE
-            } else {
-                holder.itemFooterBinding.layoutEdit.setOnClickListener {
-                    Utils.openUri(mActivity, "${Utils.decode(AppConfig.PromotionUrl)}?t=${System.currentTimeMillis()}")
-                }
-            }
-        }
     }
 
     private fun shareFullContent(guid: String) {
