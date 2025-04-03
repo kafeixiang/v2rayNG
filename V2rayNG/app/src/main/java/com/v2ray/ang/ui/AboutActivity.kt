@@ -112,10 +112,6 @@ class AboutActivity : BaseActivity() {
         }
         binding.checkPreRelease.isChecked = MmkvManager.decodeSettingsBool(AppConfig.PREF_CHECK_UPDATE_PRE_RELEASE, false)
 
-        binding.layoutSoureCcode.setOnClickListener {
-            Utils.openUri(this, AppConfig.v2rayNGUrl)
-        }
-
         binding.layoutFeedback.setOnClickListener {
             Utils.openUri(this, AppConfig.v2rayNGIssues)
         }
@@ -128,14 +124,6 @@ class AboutActivity : BaseActivity() {
                 .setView(webView)
                 .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
                 .show()
-        }
-
-        binding.layoutTgChannel.setOnClickListener {
-            Utils.openUri(this, AppConfig.TgChannelUrl)
-        }
-
-        binding.layoutPrivacyPolicy.setOnClickListener {
-            Utils.openUri(this, AppConfig.v2rayNGPrivacyPolicy)
         }
 
         "v${BuildConfig.VERSION_NAME} (${SpeedtestManager.getLibVersion()})".also {
