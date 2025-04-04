@@ -140,14 +140,6 @@ class AboutActivity : BaseActivity() {
                 .show()
         }
 
-        binding.layoutTgChannel.setOnClickListener {
-            Utils.openUri(this, AppConfig.TgChannelUrl)
-        }
-
-        binding.layoutPrivacyPolicy.setOnClickListener {
-            Utils.openUri(this, AppConfig.v2rayNGPrivacyPolicy)
-        }
-
         "v${BuildConfig.VERSION_NAME} (${SpeedtestManager.getLibVersion()})".also {
             binding.tvVersion.text = it
         }
