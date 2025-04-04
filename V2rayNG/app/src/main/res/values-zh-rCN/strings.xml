@@ -134,7 +134,7 @@
     <string name="msg_downloading_content">正在下载内容</string>
     <string name="menu_item_export_proxy_app">导出至剪贴板</string>
     <string name="menu_item_import_proxy_app">从剪贴板导入</string>
-    <string name="per_app_proxy_settings">分应用设置</string>
+    <string name="per_app_proxy_settings">分应用</string>
     <string name="per_app_proxy_settings_enable">启用分应用</string>
 
     <!-- Preferences -->
@@ -261,7 +261,7 @@
     <string name="title_del_duplicate_config">删除当前组重复配置</string>
     <string name="title_del_invalid_config">删除当前组无效配置</string>
     <string name="title_export_all">导出当前组配置至剪贴板</string>
-    <string name="title_sub_setting">订阅分组设置</string>
+    <string name="title_sub_setting">订阅</string>
     <string name="sub_setting_remarks">备注</string>
     <string name="sub_setting_url">可选地址 (url)</string>
     <string name="sub_setting_user_agent">User Agent</string>
@@ -276,7 +276,7 @@
     <string name="title_ping_all_server">测试当前组配置 Tcping</string>
     <string name="title_real_ping_all_server">测试当前组配置真连接</string>
     <string name="title_create_intelligent_selection_all_server">生成当前组智能选择配置</string>
-    <string name="title_user_asset_setting">资源文件</string>
+    <string name="title_user_asset_setting">资源</string>
     <string name="title_sort_by_test_results">按测试结果排序</string>
     <string name="title_filter_config">过滤配置</string>
     <string name="filter_config_all">所有分组</string>
@@ -291,7 +291,7 @@
 
     <!-- RoutingSettingActivity -->
     <string name="routing_settings_domain_strategy">域名策略</string>
-    <string name="routing_settings_title">路由设置</string>
+    <string name="routing_settings_title">路由</string>
     <string name="routing_settings_tips">用逗号(,)隔开, domain 和 ip 二选一填写</string>
     <string name="routing_settings_save">保存</string>
     <string name="routing_settings_delete">清空</string>
