@@ -121,14 +121,6 @@ class AboutActivity : BaseActivity() {
             }
         }
 
-        binding.layoutSoureCcode.setOnClickListener {
-            Utils.openUri(this, AppConfig.APP_URL)
-        }
-
-        binding.layoutFeedback.setOnClickListener {
-            Utils.openUri(this, AppConfig.APP_ISSUES_URL)
-        }
-
         binding.layoutOssLicenses.setOnClickListener {
             val webView = android.webkit.WebView(this)
             webView.loadUrl("file:///android_asset/open_source_licenses.html")
@@ -137,14 +129,6 @@ class AboutActivity : BaseActivity() {
                 .setView(webView)
                 .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
                 .show()
-        }
-
-        binding.layoutTgChannel.setOnClickListener {
-            Utils.openUri(this, AppConfig.TG_CHANNEL_URL)
-        }
-
-        binding.layoutPrivacyPolicy.setOnClickListener {
-            Utils.openUri(this, AppConfig.APP_PRIVACY_POLICY)
         }
 
         "v${BuildConfig.VERSION_NAME} (${SpeedtestManager.getLibVersion()})".also {
