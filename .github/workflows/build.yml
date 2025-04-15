@@ -117,7 +117,7 @@ jobs:
       uses: timheuer/base64-to-file@v1.2.4
       id: android_keystore
       with:
-        fileName: "android_keystore.jks"
+        fileName: "release.keystore"
         encodedString: ${{ secrets.APP_KEYSTORE_BASE64 }}
 
     - name: Build APK
