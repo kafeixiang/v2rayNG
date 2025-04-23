@@ -35,11 +35,6 @@
     <string name="menu_item_import_config_manually_trojan">手动输入 [Trojan]</string>
     <string name="menu_item_import_config_manually_wireguard">手动输入 [Wireguard]</string>
     <string name="menu_item_import_config_manually_hysteria2">手动输入 [Hysteria2]</string>
-    <string name="menu_item_import_config_custom">自定义配置</string>
-    <string name="menu_item_import_config_custom_clipboard">从剪贴板导入自定义配置</string>
-    <string name="menu_item_import_config_custom_local">从本地导入自定义配置</string>
-    <string name="menu_item_import_config_custom_url">剪贴板 URL 导入自定义配置</string>
-    <string name="menu_item_import_config_custom_url_scan">扫描 URL 导入自定义配置</string>
     <string name="del_config_comfirm">确认删除？</string>
     <string name="del_invalid_config_comfirm">删除前请先测试！确认删除？</string>
     <string name="server_lab_remarks">别名 (remarks)</string>
@@ -124,6 +119,7 @@
     <string name="title_user_asset_add_url">添加资产网址</string>
     <string name="msg_file_not_found">文件未找到</string>
     <string name="msg_remark_is_duplicate">备注已经存在</string>
+    <string name="asset_geo_files_sources">Geo 文件来源 (可选)</string>
 
     <!-- PerAppProxyActivity -->
     <string name="msg_dialog_progress">正在加载</string>
@@ -259,9 +255,10 @@
     <string name="sub_setting_filter">别名正则过滤</string>
     <string name="sub_setting_enable">启用更新</string>
     <string name="sub_auto_update">启用自动更新</string>
-    <string name="sub_setting_pre_profile">前置代理别名</string>
-    <string name="sub_setting_next_profile">落地代理別名</string>
-    <string name="sub_setting_pre_profile_tip">请确保别名存在并唯一</string>
+    <string name="sub_allow_insecure_url">允许不安全的 HTTP 地址</string>
+    <string name="sub_setting_pre_profile">前置代理配置文件别名</string>
+    <string name="sub_setting_next_profile">落地代理配置文件別名</string>
+    <string name="sub_setting_pre_profile_tip">请确保配置文件别名存在并唯一</string>
     <string name="title_sub_update">更新当前组订阅</string>
     <string name="title_ping_all_server">测试当前组配置 Tcping</string>
     <string name="title_real_ping_all_server">测试当前组配置真连接</string>

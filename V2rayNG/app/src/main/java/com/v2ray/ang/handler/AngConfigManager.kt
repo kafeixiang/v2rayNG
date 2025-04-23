@@ -7,7 +7,9 @@ import android.util.Log
 import com.v2ray.ang.AppConfig
 import com.v2ray.ang.AppConfig.HY2
 import com.v2ray.ang.R
-import com.v2ray.ang.dto.*
+import com.v2ray.ang.dto.EConfigType
+import com.v2ray.ang.dto.ProfileItem
+import com.v2ray.ang.dto.SubscriptionItem
 import com.v2ray.ang.fmt.CustomFmt
 import com.v2ray.ang.fmt.Hysteria2Fmt
 import com.v2ray.ang.fmt.ShadowsocksFmt
@@ -417,6 +419,11 @@ object AngConfigManager {
             if (!Utils.isValidUrl(url)) {
                 return 0
             }
+            if (!it.second.allowInsecureUrl) {
+                if (!Utils.isValidSubUrl(url)) {
+                    return 0
+                }
+            }
             Log.i(AppConfig.TAG, url)
 
             var configText = try {
@@ -430,7 +437,7 @@ object AngConfigManager {
                 configText = try {
                     HttpUtil.getUrlContentWithUserAgent(url)
                 } catch (e: Exception) {
-                    Log.e(AppConfig.TAG, "Failed to get URL content with user agent", e)
+                    Log.e(AppConfig.TAG, "Update subscription: Failed to get URL content with user agent", e)
                     ""
                 }
             }

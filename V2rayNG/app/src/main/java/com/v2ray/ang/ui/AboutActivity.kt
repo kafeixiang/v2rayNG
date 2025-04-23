@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
@@ -22,6 +23,7 @@ import com.v2ray.ang.extension.toastSuccess
 import com.v2ray.ang.handler.MmkvManager
 import com.v2ray.ang.handler.SpeedtestManager
 import com.v2ray.ang.handler.UpdateCheckerManager
+import com.v2ray.ang.util.AppManagerUtil
 import com.v2ray.ang.util.Utils
 import com.v2ray.ang.util.ZipUtil
 import kotlinx.coroutines.launch
@@ -103,6 +105,14 @@ class AboutActivity : BaseActivity() {
             }
         }
 
+        //If it is the Google Play version, not be displayed within 1 days after update
+        if (Utils.isGoogleFlavor()) {
+            val lastUpdateTime = AppManagerUtil.getLastUpdateTime(this)
+            val currentTime = System.currentTimeMillis()
+            if ((currentTime - lastUpdateTime) < 1 * 24 * 60 * 60 * 1000L) {
+                binding.layoutCheckUpdate.visibility = View.GONE
+            }
+        }
         binding.layoutCheckUpdate.setOnClickListener {
             checkForUpdates(binding.checkPreRelease.isChecked)
         }
@@ -113,7 +123,7 @@ class AboutActivity : BaseActivity() {
         binding.checkPreRelease.isChecked = MmkvManager.decodeSettingsBool(AppConfig.PREF_CHECK_UPDATE_PRE_RELEASE, false)
 
         binding.layoutFeedback.setOnClickListener {
-            Utils.openUri(this, AppConfig.v2rayNGIssues)
+            Utils.openUri(this, AppConfig.APP_ISSUES_URL)
         }
 
         binding.layoutOssLicenses.setOnClickListener {

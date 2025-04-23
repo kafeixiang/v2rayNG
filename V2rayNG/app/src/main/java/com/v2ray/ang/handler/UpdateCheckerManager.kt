@@ -7,6 +7,7 @@ import com.v2ray.ang.AppConfig
 import com.v2ray.ang.BuildConfig
 import com.v2ray.ang.dto.CheckUpdateResult
 import com.v2ray.ang.dto.GitHubRelease
+import com.v2ray.ang.extension.concatUrl
 import com.v2ray.ang.util.HttpUtil
 import com.v2ray.ang.util.JsonUtil
 import kotlinx.coroutines.Dispatchers
@@ -18,9 +19,9 @@ object UpdateCheckerManager {
     suspend fun checkForUpdate(includePreRelease: Boolean = false): CheckUpdateResult = withContext(Dispatchers.IO) {
         try {
             val url = if (includePreRelease) {
-                AppConfig.v2rayNGAPIUrl
+                AppConfig.APP_API_URL
             } else {
-                "${AppConfig.v2rayNGAPIUrl}/latest"
+                AppConfig.APP_API_URL.concatUrl("latest")
             }
 
             var response = HttpUtil.getUrlContent(url, 5000)
@@ -31,8 +32,7 @@ object UpdateCheckerManager {
 
             val latestRelease = if (includePreRelease) {
                 JsonUtil.fromJson(response, Array<GitHubRelease>::class.java)
-                    .filter { it.prerelease }
-                    .maxByOrNull { it.publishedAt }
+                    .firstOrNull()
                     ?: throw IllegalStateException("No pre-release found")
             } else {
                 JsonUtil.fromJson(response, GitHubRelease::class.java)

@@ -35,11 +35,6 @@
     <string name="menu_item_import_config_manually_trojan">الكتابة يدويًا [Trojan]</string>
     <string name="menu_item_import_config_manually_wireguard">الكتابة يدويًا [Wireguard]</string>
     <string name="menu_item_import_config_manually_hysteria2">Type manually[Hysteria2]</string>
-    <string name="menu_item_import_config_custom">تكوين مخصص</string>
-    <string name="menu_item_import_config_custom_clipboard">استيراد تكوين مخصص من الحافظة</string>
-    <string name="menu_item_import_config_custom_local">استيراد تكوين مخصص من الجهاز</string>
-    <string name="menu_item_import_config_custom_url">استيراد تكوين مخصص من عنوان URL</string>
-    <string name="menu_item_import_config_custom_url_scan">استيراد تكوين مخصص مسح عنوان URL</string>
     <string name="del_config_comfirm">تأكيد الحذف؟</string>
     <string name="del_invalid_config_comfirm">Please test before deleting! Confirm delete ?</string>
     <string name="server_lab_remarks">ملاحظات</string>
@@ -127,6 +122,7 @@
     <string name="title_user_asset_add_url">إضافة عنوان URL للأصل</string>
     <string name="msg_file_not_found">الملف غير موجود</string>
     <string name="msg_remark_is_duplicate">الملاحظات موجودة بالفعل</string>
+    <string name="asset_geo_files_sources">Geo files source (optional)</string>
 
     <!-- PerAppProxyActivity -->
     <string name="msg_dialog_progress">جار التحميل</string>
@@ -262,9 +258,10 @@
     <string name="sub_setting_filter">Remarks regular filter</string>
     <string name="sub_setting_enable">تفعيل التحديث</string>
     <string name="sub_auto_update">تفعيل التحديث التلقائي</string>
-    <string name="sub_setting_pre_profile">Previous proxy remarks</string>
-    <string name="sub_setting_next_profile">Next proxy remarks</string>
-    <string name="sub_setting_pre_profile_tip">The remarks exists and is unique</string>
+    <string name="sub_allow_insecure_url">Allow insecure HTTP address</string>
+    <string name="sub_setting_pre_profile">Previous proxy configuration remarks</string>
+    <string name="sub_setting_next_profile">Next proxy configuration remarks</string>
+    <string name="sub_setting_pre_profile_tip">The configuration remarks exists and is unique</string>
     <string name="title_sub_update">تحديث الاشتراك (أول خطوة)</string>
     <string name="title_ping_all_server">Tcping لجميع الإعدادات</string>
     <string name="title_real_ping_all_server"> اختبر جميع الإعدادات (3)</string>
