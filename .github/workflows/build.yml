@@ -1,14 +1,11 @@
 name: Build APK
 
 on:
-  workflow_dispatch:
-    inputs:
-      release_tag:
-        required: false
-        type: string
   push:
     branches:
       - master
+      - dev*
+  workflow_dispatch:
 
 jobs:
   build:
@@ -97,7 +94,13 @@ jobs:
         chmod 755 gradlew
         ./gradlew licenseFdroidReleaseReport
         ./gradlew assembleRelease -Pandroid.injected.signing.store.file=${{ steps.android_keystore.outputs.filePath }} -Pandroid.injected.signing.store.password=${{ secrets.APP_KEYSTORE_PASSWORD }} -Pandroid.injected.signing.key.alias=${{ secrets.APP_KEYSTORE_ALIAS }} -Pandroid.injected.signing.key.password=${{ secrets.APP_KEY_PASSWORD }}
-    
+
+    - name: Get versionName
+      id: version
+      run: |
+        ver=$(grep 'versionName\s*=' V2rayNG/app/build.gradle.kts | head -1 | sed -E 's/.*versionName\s*=\s*"(.*)".*/\1/')
+        echo "version=$ver" >> $GITHUB_OUTPUT
+
     - name: Upload arm64-v8a APK
       uses: actions/upload-artifact@v6
       if: ${{  success() }}
@@ -121,9 +124,10 @@ jobs:
 
     - name: Upload to release
       uses: svenstaro/upload-release-action@v2
-      if: github.event.inputs.release_tag != ''
       with:
-        file: ${{ github.workspace }}/V2rayNG/app/build/outputs/apk/*/release/*.apk
-        tag: ${{ github.event.inputs.release_tag }}
-        file_glob: true
-        prerelease: true
+          file: ${{ github.workspace }}/V2rayNG/app/build/outputs/apk/*/release/*.apk
+          tag: "${{ steps.version.outputs.version }}"
+          release_name: "${{ steps.version.outputs.version }}"
+          file_glob: true
+          prerelease: true
+          overwrite: true
