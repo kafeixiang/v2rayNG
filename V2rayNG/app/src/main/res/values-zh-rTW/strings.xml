@@ -274,18 +274,9 @@
     <string name="summary_pref_group_all_display">在一個分頁中彙整所有訂閱群組的設定檔。</string>
 
     <!-- AboutActivity -->
-    <string name="title_pref_feedback">意見回饋</string>
-    <string name="summary_pref_feedback">前往 GitHub 提出改進建議或回報錯誤</string>
-    <string name="summary_pref_tg_group">加入 Telegram 群組</string>
-    <string name="toast_tg_app_not_found">找不到 Telegram 應用程式</string>
-    <string name="title_privacy_policy">隱私權政策</string>
-    <string name="title_qr_code">QR Code</string>
+    <string name="title_qr_code">QR code</string>
     <string name="title_about">關於</string>
-    <string name="title_source_code">原始碼</string>
     <string name="title_oss_license">開放原始碼授權</string>
-    <string name="title_tg_channel">Telegram 頻道</string>
-
-    <string name="title_pref_promotion">推廣</string>
 
     <string name="title_pref_auto_update_subscription">自動更新訂閱</string>
     <string name="summary_pref_auto_update_subscription">在背景依指定間隔自動更新訂閱。此功能可能因裝置而無法穩定運作。</string>
